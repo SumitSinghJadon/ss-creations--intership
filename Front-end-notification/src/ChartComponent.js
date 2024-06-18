@@ -1,55 +1,48 @@
-import {
-    Chart,
-    Colors,
-    BarController,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Legend
-  } from 'chart.js'
-
-  import { Bar } from 'react-chartjs-2';
+import Chart from "react-apexcharts";
+import { useState, useEffect } from "react";
   
-  Chart.register(
-    Colors,
-    BarController,
-    BarElement,
-    CategoryScale,
-    LinearScale,
-    Legend
-  );
-  
-const ChartComponent = () => {
-    const data = {
-        labels: ['January', 'February', 'March', 'April', 'May'],
-        datasets: [
-            {
-                label: 'Sales',
-                backgroundColor: 'rgba(75,192,192,1)',
-                borderColor: 'rgba(0,0,0,1)',
-                borderWidth: 2,
-                data: [65, 59, 80, 81, 56],
-            },
-        ],
-    };
 
+const ChartComponent = () => {    
+    const [chartData, setChartData] = useState({});
+
+      useEffect(()=>{
+
+       setChartData({
+        options: {
+          chart: {
+            id: "basic-bar"
+          },
+          xaxis: {
+            categories: ['Jan', 'Feb', 'March', 'April', 'May', 'Jun', 'July', 'Aug']
+          }
+        },
+        series: [
+          {
+            name: "series-1",
+            data: [30, 40, 45, 50, 49, 60, 70, 91]
+          }
+        ]
+      })
+      }, [])
     return (
         <>
-            <Bar
-                data={data}
-                options={{
-                    title: {
-                        display: true,
-                        text: 'Monthly Sales',
-                        fontSize: 20,
-                    },
-                    legend: {
-                        display: true,
-                        position: 'top',
-                    },
-                }}
+            <h1>hello</h1>
+            <div>
+
+        {chartData.options && chartData.series ? (
+            <Chart
+              options={chartData.options}
+              series={chartData.series}
+              type="bar"
+              width="500"
             />
+        ): (
+            <p>Loading...</p>
+          )}
+    
+            </div>
         </>
     );
+
 }
 export default ChartComponent;

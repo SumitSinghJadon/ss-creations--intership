@@ -23,6 +23,7 @@ class MyConsumer(WebsocketConsumer):
         
     def notification_send(self, event):
         data = json.loads(event.get('value'))
+        print(event)
         self.send(text_data=json.dumps({
             "status": data
         }))

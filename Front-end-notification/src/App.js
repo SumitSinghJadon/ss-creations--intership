@@ -4,6 +4,7 @@ import Notification from './Notification';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import WebSocketComponent from './WebSocketComponent';
 import ChartComponent from './ChartComponent';
+import ChartStudent from './ChartStudent';
 const App = () => {
   return (
    <>
@@ -15,6 +16,8 @@ const App = () => {
     <Route path='ApplyLeave' element={<ApplyLeave/>}/>
     <Route path='WebSocketComponent' element={<WebSocketComponent/>}/>
     <Route path='ChartComponent'  element={<ChartComponent/>}/>
+    <Route path='ChartStudent'  element={<ChartStudent/>}/>
+
     </Route>
    </Routes>
    </BrowserRouter>

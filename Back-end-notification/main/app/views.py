@@ -1,12 +1,11 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import viewsets
 from .models import *
 from .serializers import LeaveSerializer
-from django.db.models.query import QuerySet
-from rest_framework import serializers
-import json
-from django.http import JsonResponse
+
+
+
 
 
 # Create your views here.

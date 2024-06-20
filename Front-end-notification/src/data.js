@@ -151,4 +151,68 @@ const data=[
     }
   ]
   
+
+  const  myproduct = [
+    {
+      "id": 1,
+      "productName": "Product A",
+      "price": 100.00,
+      "purchaseDate": "2024-06-20T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "productName": "Product B",
+      "price": 200.00,
+      "purchaseDate": "2024-06-19T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "productName": "Product C",
+      "price": 150.00,
+      "purchaseDate": "2024-06-18T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "productName": "Product D",
+      "price": 250.00,
+      "purchaseDate": "2024-06-17T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "productName": "Product E",
+      "price": 120.00,
+      "purchaseDate": "2024-06-16T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "productName": "Product F",
+      "price": 180.00,
+      "purchaseDate": "2024-06-15T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "productName": "Product G",
+      "price": 220.00,
+      "purchaseDate": "2024-06-14T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "productName": "Product H",
+      "price": 280.00,
+      "purchaseDate": "2024-06-13T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "productName": "Product I",
+      "price": 130.00,
+      "purchaseDate": "2024-06-12T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "productName": "Product J",
+      "price": 160.00,
+      "purchaseDate": "2024-06-11T00:00:00.000Z"
+    }
+  ]
 export default data
+export {myproduct}

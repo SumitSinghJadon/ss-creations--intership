@@ -1,10 +1,13 @@
 import Chart from "react-apexcharts";
 import { useState, useEffect } from "react";
 import data from "./data";
+import { myproduct } from "./data";
 
 const ChartStudent=()=>{
 
     const [chartData, setChartData] = useState({});
+    const [productData, setproductData] = useState({});
+    
 
 
     useEffect(() => {
@@ -30,6 +33,42 @@ const ChartStudent=()=>{
             });
         }
     }, [data]);
+
+    
+    useEffect(() => {
+        if (Object.keys(myproduct).length > 0) {
+            var sum=0
+            const prices = myproduct.map(product => {
+                            sum += product.price;
+                            return sum; 
+                         });
+        console.log("thakur",prices,"sumit")
+        
+            const Dates = myproduct.map(product => product.purchaseDate);
+  
+            setproductData({
+                options: {
+                
+                    xaxis: {
+                        categories: Dates
+                    }
+                },
+                series: [
+                    {
+                        name: "series-1",
+                        data: prices
+                    }
+                ]
+                
+            });
+     
+  
+        }
+      
+    }, [myproduct]);
+  
+   
+  
   
 
     return(
@@ -41,6 +80,22 @@ const ChartStudent=()=>{
       options={chartData.options}
       series={chartData.series}
       type="bar"
+      width="1000"
+    />
+): (
+    <p>Loading...</p>
+  )}
+
+    </div>
+
+
+    <div>
+
+{productData.options && productData.series ? (
+    <Chart
+      options={productData.options}
+      series={productData.series}
+      type="line"
       width="1000"
     />
 ): (
